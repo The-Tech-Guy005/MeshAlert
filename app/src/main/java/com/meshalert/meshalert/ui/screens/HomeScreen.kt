@@ -13,18 +13,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(navController: NavController) {
 
     Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(24.dp),
-
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
-
     ) {
 
         Text(
@@ -34,19 +33,31 @@ fun HomeScreen() {
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        Button(onClick = {}) {
+        Button(
+            onClick = {
+                navController.navigate("sos")
+            }
+        ) {
             Text("Send SOS")
         }
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        Button(onClick = {}) {
+        Button(
+            onClick = {
+                navController.navigate("safe")
+            }
+        ) {
             Text("I'm Safe")
         }
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        Button(onClick = {}) {
+        Button(
+            onClick = {
+                navController.navigate("broadcast")
+            }
+        ) {
             Text("Broadcast Alert")
         }
     }
